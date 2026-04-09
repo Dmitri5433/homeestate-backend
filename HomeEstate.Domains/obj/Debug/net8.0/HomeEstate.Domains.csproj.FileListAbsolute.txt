@@ -1,0 +1,11 @@
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\bin\Debug\net8.0\HomeEstate.Domains.deps.json
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\bin\Debug\net8.0\HomeEstate.Domains.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\bin\Debug\net8.0\HomeEstate.Domains.pdb
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.AssemblyInfoInputs.cache
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.AssemblyInfo.cs
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.csproj.CoreCompileInputs.cache
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\refint\HomeEstate.Domains.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.pdb
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\ref\HomeEstate.Domains.dll

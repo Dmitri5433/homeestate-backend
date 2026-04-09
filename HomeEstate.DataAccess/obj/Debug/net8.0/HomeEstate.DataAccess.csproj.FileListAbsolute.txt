@@ -1,0 +1,17 @@
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\bin\Debug\net8.0\HomeEstate.DataAccess.deps.json
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\bin\Debug\net8.0\HomeEstate.DataAccess.runtimeconfig.json
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\bin\Debug\net8.0\HomeEstate.DataAccess.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\bin\Debug\net8.0\HomeEstate.DataAccess.pdb
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\bin\Debug\net8.0\HomeEstate.Domains.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\bin\Debug\net8.0\HomeEstate.Domains.pdb
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.csproj.AssemblyReference.cache
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.AssemblyInfoInputs.cache
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.AssemblyInfo.cs
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEsta.851F8897.Up2Date
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\refint\HomeEstate.DataAccess.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.pdb
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.genruntimeconfig.cache
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\ref\HomeEstate.DataAccess.dll
