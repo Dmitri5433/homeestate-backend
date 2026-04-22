@@ -15,3 +15,4 @@ C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Bus
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.BusinessLogic\obj\Debug\net8.0\refint\HomeEstate.BusinessLogic.dll
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.BusinessLogic\obj\Debug\net8.0\HomeEstate.BusinessLogic.pdb
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.BusinessLogic\obj\Debug\net8.0\ref\HomeEstate.BusinessLogic.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.BusinessLogic\obj\Debug\net8.0\HomeEstate.BusinessLogic.sourcelink.json

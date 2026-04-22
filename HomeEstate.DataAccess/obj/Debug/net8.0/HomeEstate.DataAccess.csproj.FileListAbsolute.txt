@@ -15,3 +15,4 @@ C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Dat
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.pdb
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.genruntimeconfig.cache
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\ref\HomeEstate.DataAccess.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.DataAccess\obj\Debug\net8.0\HomeEstate.DataAccess.sourcelink.json

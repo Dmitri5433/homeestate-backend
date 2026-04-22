@@ -134,3 +134,5 @@ C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Api
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Api\obj\Debug\net8.0\HomeEstate.Api.pdb
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Api\obj\Debug\net8.0\HomeEstate.Api.genruntimeconfig.cache
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Api\obj\Debug\net8.0\ref\HomeEstate.Api.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Api\obj\Debug\net8.0\HomeEstate.Api.sourcelink.json
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Api\bin\Debug\net8.0\AutoMapper.dll

@@ -9,3 +9,4 @@ C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Dom
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\refint\HomeEstate.Domains.dll
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.pdb
 C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\ref\HomeEstate.Domains.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.sourcelink.json
