@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Api\\HomeEstate.Api.csproj": {}
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Api\\HomeEstate.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Api\\HomeEstate.Api.csproj": {
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Api\\HomeEstate.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Api\\HomeEstate.Api.csproj",
+        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Api\\HomeEstate.Api.csproj",
         "projectName": "HomeEstate.Api",
-        "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Api\\HomeEstate.Api.csproj",
-        "packagesPath": "C:\\Users\\xmenx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Api\\obj\\",
+        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Api\\HomeEstate.Api.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\xmenx\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,11 +28,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj"
+              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj"
               },
-              "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
-                "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
+              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
               }
             }
           }
@@ -51,7 +47,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -82,19 +78,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -105,25 +101,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj": {
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
         "projectName": "HomeEstate.BusinessLogic",
-        "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\xmenx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\xmenx\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -137,11 +129,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj"
+              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj"
               },
-              "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
-                "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
+              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
               }
             }
           }
@@ -156,7 +148,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -181,15 +173,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -197,25 +189,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
         "projectName": "HomeEstate.DataAccess",
-        "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\xmenx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\xmenx\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -229,8 +217,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
-                "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
+              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
               }
             }
           }
@@ -245,7 +233,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -276,15 +264,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -292,25 +280,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj",
+        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj",
         "projectName": "HomeEstate.Domains",
-        "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj",
-        "packagesPath": "C:\\Users\\xmenx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\obj\\",
+        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\xmenx\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -336,11 +320,17 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -355,15 +345,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
+              "version": "[8.0.26, 8.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -371,7 +361,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
