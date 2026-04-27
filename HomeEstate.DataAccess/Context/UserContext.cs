@@ -9,7 +9,7 @@ namespace HomeEstate.DataAccess.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(DbSession.ConnectionStrings);
+            optionsBuilder.UseSqlServer(DbSession.ConnectionStrings);
         }
     }
 }

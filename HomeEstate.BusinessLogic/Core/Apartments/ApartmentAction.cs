@@ -13,10 +13,11 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
 
         public ApartmentAction()
         {
-            _mapper = new MapperConfiguration(cfg =>
+            var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new Mapping.ApartmentProfile());
-            }).CreateMapper();
+            });
+            _mapper = config.CreateMapper();
         }
 
         protected List<ApartmentDto> ExecuteGetAllApartmentsAction()
@@ -43,9 +44,11 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
         {
             using (var db = new ApartmentContext())
             {
-                var existing = db.Apartments.FirstOrDefault(x => x.Name == apartment.Name && x.City == apartment.City);
+                var existing = db.Apartments
+                    .FirstOrDefault(x => x.Name == apartment.Name);
+
                 if (existing != null)
-                    return new ResponceMsg { IsSuccess = false, Message = "An apartment with this name in this city already exists." };
+                    return new ResponceMsg { IsSuccess = false, Message = "An apartment with this name already exists." };
 
                 var newApartment = _mapper.Map<ApartmentData>(apartment);
                 newApartment.Status = ApartmentStatus.Available;

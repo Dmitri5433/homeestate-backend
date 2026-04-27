@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeEstate.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+407d3ee438b2c43ae790aaa6899be8ab649c0baa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98d99f6a438ad70ac33465aea1ff1b2657010d74")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeEstate.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeEstate.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
