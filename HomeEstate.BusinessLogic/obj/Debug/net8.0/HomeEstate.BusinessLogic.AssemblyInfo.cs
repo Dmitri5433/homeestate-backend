@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeEstate.BusinessLogic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ae86cf742c0250f4d55f96b393d6e1c2c21bd4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e673c24bf85a530b23fff099371e3649ed445a88")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeEstate.BusinessLogic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeEstate.BusinessLogic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
