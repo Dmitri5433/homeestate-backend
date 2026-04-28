@@ -23,3 +23,4 @@ C:\Users\user\homeestate\homeestate\homeestate\homeestate-backend\HomeEstate.Dom
 C:\Users\user\homeestate\homeestate\homeestate\homeestate-backend\HomeEstate.Domains\obj\Debug\net8.0\refint\HomeEstate.Domains.dll
 C:\Users\user\homeestate\homeestate\homeestate\homeestate-backend\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.pdb
 C:\Users\user\homeestate\homeestate\homeestate\homeestate-backend\HomeEstate.Domains\obj\Debug\net8.0\ref\HomeEstate.Domains.dll
+C:\Users\xmenx\OneDrive\Desktop\HomeEstate-backend\HomeEstate.Api\HomeEstate.Domains\obj\Debug\net8.0\HomeEstate.Domains.csproj.AssemblyReference.cache

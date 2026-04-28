@@ -1211,7 +1211,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-<<<<<<< HEAD
       "System.Configuration.ConfigurationManager/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -1220,46 +1219,32 @@
         },
         "compile": {
           "lib/net6.0/_._": {
-=======
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
       "System.Diagnostics.DiagnosticSource/10.0.7": {
         "type": "package",
         "compile": {
           "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
             "related": ".xml"
           }
         },
         "runtime": {
-<<<<<<< HEAD
-          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
-=======
           "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
             "related": ".xml"
           }
         },
         "build": {
-<<<<<<< HEAD
-          "buildTransitive/netcoreapp3.1/_._": {}
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "System.Drawing.Common/6.0.0": {
@@ -1319,9 +1304,6 @@
           "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
             "related": ".xml"
           }
-=======
-          "buildTransitive/net8.0/_._": {}
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
         }
       },
       "System.IO.Pipelines/6.0.3": {
@@ -1340,11 +1322,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-<<<<<<< HEAD
-      "System.Memory/4.5.4": {
-=======
       "System.Memory/4.6.3": {
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
         "type": "package",
         "compile": {
           "lib/netcoreapp2.1/_._": {}
@@ -1438,7 +1416,7 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+          "lib/net6.0/_._": {
             "related": ".xml"
           }
         },
@@ -3589,22 +3567,14 @@
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "System.Configuration.ConfigurationManager/6.0.1": {
       "sha512": "jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==",
       "type": "package",
       "path": "system.configuration.configurationmanager/6.0.1",
-=======
-    "System.Diagnostics.DiagnosticSource/10.0.7": {
-      "sha512": "Fu6AxFf9bHz/Q7DQmxKC0o+UgFes8bs2Xh+PH/x31yExRAOASTwlzjZsISTtqVU5gQshKHLZopxEBTaIyfv0wg==",
-      "type": "package",
-      "path": "system.diagnostics.diagnosticsource/10.0.7",
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-<<<<<<< HEAD
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/netcoreapp2.0/System.Configuration.ConfigurationManager.targets",
@@ -3622,28 +3592,14 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/6.0.0": {
-      "sha512": "frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
+    "System.Diagnostics.DiagnosticSource/10.0.7": {
+      "sha512": "Fu6AxFf9bHz/Q7DQmxKC0o+UgFes8bs2Xh+PH/x31yExRAOASTwlzjZsISTtqVU5gQshKHLZopxEBTaIyfv0wg==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/6.0.0",
+      "path": "system.diagnostics.diagnosticsource/10.0.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net461/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net5.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net5.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-=======
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
         "buildTransitive/net462/_._",
@@ -3660,12 +3616,10 @@
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
         "system.diagnostics.diagnosticsource.10.0.7.nupkg.sha512",
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "System.Drawing.Common/6.0.0": {
       "sha512": "NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
       "type": "package",
@@ -3746,8 +3700,6 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-=======
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
     "System.IO.Pipelines/6.0.3": {
       "sha512": "ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
       "type": "package",
@@ -3773,19 +3725,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
-    "System.Memory/4.5.4": {
-      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
-      "type": "package",
-      "path": "system.memory/4.5.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Memory.dll",
-        "lib/net461/System.Memory.xml",
-=======
     "System.Memory/4.6.3": {
       "sha512": "qdcDOgnFZY40+Q9876JUHnlHu7bosOHX8XISRoH94fwk6hgaeQGSgfZd8srWRZNt5bV9ZW2TljcegDNxsf+96A==",
       "type": "package",
@@ -3799,21 +3738,12 @@
         "buildTransitive/net462/_._",
         "lib/net462/System.Memory.dll",
         "lib/net462/System.Memory.xml",
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
         "lib/netcoreapp2.1/_._",
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
-<<<<<<< HEAD
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.4.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-=======
         "lib/netstandard2.1/_._",
         "system.memory.4.6.3.nupkg.sha512",
         "system.memory.nuspec"
->>>>>>> 0075dbc121a827f945e6a168f59dd12661099a9e
       ]
     },
     "System.Memory.Data/1.0.2": {
@@ -4603,19 +4533,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\xmenx\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
       "projectName": "HomeEstate.DataAccess",
-      "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\xmenx\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\xmenx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4629,8 +4564,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
-              "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
+            "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+              "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
             }
           }
         }
@@ -4645,7 +4580,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -4676,15 +4611,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.26, 8.0.26]"
+            "version": "[8.0.23, 8.0.23]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.26, 8.0.26]"
+            "version": "[8.0.23, 8.0.23]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.26, 8.0.26]"
+            "version": "[8.0.23, 8.0.23]"
           }
         ],
         "frameworkReferences": {
@@ -4692,8 +4627,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ошибка чтения файла кэша C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
+    }
+  ]
 }
