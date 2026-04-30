@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using HomeEstate.DataAccess.Context;
+﻿using HomeEstate.DataAccess.Context;
 using HomeEstate.Domains.Entities.Apartment;
 using HomeEstate.Domains.Enums;
 using HomeEstate.Domains.Models.Apartment;
@@ -9,25 +8,41 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
 {
     public class ApartmentAction
     {
-        protected readonly IMapper _mapper;
-
-        public ApartmentAction()
+        private ApartmentDto MapToDto(ApartmentData a)
         {
-            var config = new MapperConfiguration(cfg =>
+            return new ApartmentDto
             {
-                cfg.AddProfile(new Mapping.ApartmentProfile());
-            });
-            _mapper = config.CreateMapper();
+                Id       = a.Id,
+                Name     = a.Name,
+                City     = a.City?.Name ?? "",
+                Category = a.Category,
+                Rooms    = a.Rooms,
+                Area     = a.Area,
+                Price    = a.Price,
+                ImageUrl = a.ImageUrl
+            };
+        }
+
+        private ApartmentData MapToEntity(ApartmentDto dto)
+        {
+            return new ApartmentData
+            {
+                Id       = dto.Id,
+                Name     = dto.Name,
+                Category = dto.Category,
+                Rooms    = dto.Rooms,
+                Area     = dto.Area,
+                Price    = dto.Price,
+                ImageUrl = dto.ImageUrl
+            };
         }
 
         protected List<ApartmentDto> ExecuteGetAllApartmentsAction()
         {
-            List<ApartmentData> data;
             using (var db = new ApartmentContext())
             {
-                data = db.Apartments.ToList();
+                return db.Apartments.ToList().Select(MapToDto).ToList();
             }
-            return _mapper.Map<List<ApartmentDto>>(data);
         }
 
         protected ApartmentDto? GetApartmentDataByIdAction(int id)
@@ -36,7 +51,7 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
             {
                 var a = db.Apartments.FirstOrDefault(x => x.Id == id);
                 if (a == null) return null;
-                return _mapper.Map<ApartmentDto>(a);
+                return MapToDto(a);
             }
         }
 
@@ -44,16 +59,24 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
         {
             using (var db = new ApartmentContext())
             {
-                var existing = db.Apartments
-                    .FirstOrDefault(x => x.Name == apartment.Name);
-
+                var existing = db.Apartments.FirstOrDefault(x => x.Name == apartment.Name);
                 if (existing != null)
                     return new ResponceMsg { IsSuccess = false, Message = "An apartment with this name already exists." };
 
-                var newApartment = _mapper.Map<ApartmentData>(apartment);
-                newApartment.Status = ApartmentStatus.Available;
+                var city = db.Cities.FirstOrDefault(x => x.Name == apartment.City);
+                if (city == null)
+                {
+                    city = new HomeEstate.Domains.Entities.City.CityData { Name = apartment.City };
+                    db.Cities.Add(city);
+                    db.SaveChanges();
+                }
+
+                var newApartment = MapToEntity(apartment);
+                newApartment.CityId    = city.Id;
+                newApartment.Status    = ApartmentStatus.Available;
                 newApartment.CreatedAt = DateTime.UtcNow;
                 newApartment.UpdatedAt = DateTime.UtcNow;
+
                 db.Apartments.Add(newApartment);
                 db.SaveChanges();
             }
@@ -68,8 +91,14 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
                 if (existing == null)
                     return new ResponceMsg { IsSuccess = false, Message = "Apartment not found." };
 
-                _mapper.Map(apartment, existing);
+                existing.Name     = apartment.Name;
+                existing.Category = apartment.Category;
+                existing.Rooms    = apartment.Rooms;
+                existing.Area     = apartment.Area;
+                existing.Price    = apartment.Price;
+                existing.ImageUrl = apartment.ImageUrl;
                 existing.UpdatedAt = DateTime.UtcNow;
+
                 db.SaveChanges();
             }
             return new ResponceMsg { IsSuccess = true, Message = "Apartment updated successfully." };
@@ -90,3 +119,6 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
         }
     }
 }
+
+
+

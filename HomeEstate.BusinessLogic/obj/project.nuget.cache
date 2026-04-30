@@ -1,16 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "PSFjEcGmBH8=",
+  "dgSpecHash": "Q21YI8SOuYE=",
   "success": true,
   "projectFilePath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\xmenx\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\10.0.7\\microsoft.aspnetcore.cryptography.internal.10.0.7.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\10.0.7\\microsoft.aspnetcore.cryptography.keyderivation.10.0.7.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0\\microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
@@ -73,27 +72,5 @@
     "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.23\\microsoft.windowsdesktop.app.ref.8.0.23.nupkg.sha512",
     "C:\\Users\\xmenx\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.23\\microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "message": "Ошибка чтения файла кэша C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
-      "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
-      "targetGraphs": []
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "У пакета \"AutoMapper\" 12.0.1 есть известная уязвимость https://github.com/advisories/GHSA-rvv3-g6hj-g44x (уровень серьезности: высокий)",
-      "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
