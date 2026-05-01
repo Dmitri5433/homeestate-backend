@@ -61,6 +61,20 @@ namespace HomeEstate.BusinessLogic.Core.Auth
             }
         }
 
+        protected List<HomeEstate.Domains.Models.User.UserListDto> ExecuteGetAllUsersAction()
+        {
+            using (var db = new HomeEstate.DataAccess.Context.UserContext())
+            {
+                return db.Users.Select(u => new HomeEstate.Domains.Models.User.UserListDto
+                {
+                    Id = u.Id,
+                    UserName = u.UserName,
+                    Email = u.Email,
+                    CreatedAt = u.CreatedAt
+                }).ToList();
+            }
+        }
+
         private string GenerateToken() => Guid.NewGuid().ToString("N") + Guid.NewGuid().ToString("N");
 
         private string HashPassword(string password)
@@ -71,3 +85,4 @@ namespace HomeEstate.BusinessLogic.Core.Auth
         }
     }
 }
+
