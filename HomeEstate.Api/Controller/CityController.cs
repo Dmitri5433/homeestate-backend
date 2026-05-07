@@ -8,20 +8,20 @@ namespace HomeEstate.Api.Controller
     [ApiController]
     public class CityController : ControllerBase
     {
-        private readonly ICityActions _city;
+        private readonly ICityActions _cityService;
 
-        public CityController()
+        public CityController(ICityActions cityService)
         {
-            _city = new BusinessLogic.BusinessLogic().GetCityActions();
+            _cityService = cityService;
         }
 
         [HttpGet("getAll")]
-        public IActionResult GetAll() => Ok(_city.GetAllCitiesAction());
+        public IActionResult GetAll() => Ok(_cityService.GetAll());
 
         [HttpPost]
-        public IActionResult Create([FromBody] CityDto city) => Ok(_city.CreateCityAction(city));
+        public IActionResult Create([FromBody] CityDto city) => Ok(_cityService.Create(city));
 
-        [HttpDelete("id")]
-        public IActionResult Delete(int id) => Ok(_city.DeleteCityAction(id));
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id) => Ok(_cityService.Delete(id));
     }
 }

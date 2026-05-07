@@ -8,55 +8,46 @@ namespace HomeEstate.Api.Controller
     [ApiController]
     public class ApartmentController : ControllerBase
     {
-        private readonly IApartment _apartment;
+        private readonly IApartment _apartmentService;
 
-        public ApartmentController()
+        // «ависимость передаетс€ через конструктор (DI)
+        public ApartmentController(IApartment apartmentService)
         {
-            var bl = new BusinessLogic.BusinessLogic();
-            _apartment = bl.GetApartmentActions();
+            _apartmentService = apartmentService;
         }
 
-        // GET api/apartment/getAll
         [HttpGet("getAll")]
         public IActionResult GetAll()
         {
-            var apartments = _apartment.GetAllApartmentsAction();
-            return Ok(apartments);
+            return Ok(_apartmentService.GetAll());
         }
 
-        // GET api/apartment/id?id=1
-        [HttpGet("id")]
+        [HttpGet("{id}")] 
         public IActionResult GetById(int id)
         {
-            var apartment = _apartment.GetApartmentByIdAction(id);
+            var apartment = _apartmentService.GetById(id);
             if (apartment == null)
                 return NotFound(new { Message = "Apartment not found." });
 
             return Ok(apartment);
         }
 
-        // POST api/apartment
         [HttpPost]
         public IActionResult Create([FromBody] ApartmentDto apartment)
         {
-            var result = _apartment.ResponceApartmentCreateAction(apartment);
-            return Ok(result);
+            return Ok(_apartmentService.Create(apartment));
         }
 
-        // PUT api/apartment
         [HttpPut]
         public IActionResult Update([FromBody] ApartmentDto apartment)
         {
-            var result = _apartment.ResponceApartmentUpdateAction(apartment);
-            return Ok(result);
+            return Ok(_apartmentService.Update(apartment));
         }
 
-        // DELETE api/apartment/id?id=1
-        [HttpDelete("id")]
+        [HttpDelete("{id}")] 
         public IActionResult Delete(int id)
         {
-            var result = _apartment.ResponceApartmentDeleteAction(id);
-            return Ok(result);
+            return Ok(_apartmentService.Delete(id));
         }
     }
 }

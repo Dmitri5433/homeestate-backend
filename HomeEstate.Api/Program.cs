@@ -1,9 +1,22 @@
-﻿using HomeEstate.DataAccess;
+using HomeEstate.DataAccess;
 using HomeEstate.DataAccess.Context;
+using HomeEstate.BusinessLogic.Interface;
+using HomeEstate.BusinessLogic.Functions.Cities;
+using HomeEstate.BusinessLogic.Functions.Auth;
+using HomeEstate.BusinessLogic.Functions.Apartments;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-DbSession.ConnectionStrings = builder.Configuration.GetConnectionString("DefaultConnection")!;
+var connString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+DbSession.ConnectionStrings = connString;
+
+builder.Services.AddDbContext<ApartmentContext>(opt => opt.UseSqlServer(connString));
+builder.Services.AddDbContext<UserContext>(opt => opt.UseSqlServer(connString));
+
+builder.Services.AddScoped<ICityActions, CityFlow>();
+builder.Services.AddScoped<IAuthActions, AuthFlow>();
+builder.Services.AddScoped<IApartment, ApartmentFlow>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -30,14 +43,22 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    using (var db = new ApartmentContext()) { db.Database.EnsureCreated(); }
-    using (var db = new UserContext()) { db.Database.EnsureCreated(); }
+    var apartmentDb = scope.ServiceProvider.GetRequiredService<ApartmentContext>();
+    if (apartmentDb.Database.GetPendingMigrations().Any())
+        apartmentDb.Database.Migrate();
+
+    var userDb = scope.ServiceProvider.GetRequiredService<UserContext>();
+    if (userDb.Database.GetPendingMigrations().Any())
+        userDb.Database.Migrate();
 }
 
-if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
-
