@@ -16,12 +16,13 @@ namespace HomeEstate.Api.Controller
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] UserRegisterDto data) => Ok(_authService.Register(data));
+        public IActionResult Register([FromBody] UserRegisterDto data) => 
+            Ok(_authService.RegisterAction(data));
 
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLoginDto data)
         {
-            var session = _authService.Login(data);
+            var session = _authService.LoginAction(data);
             if (session == null)
                 return Unauthorized(new { IsSuccess = false, Message = "Invalid email or password." });
 
@@ -43,7 +44,7 @@ namespace HomeEstate.Api.Controller
             if (string.IsNullOrEmpty(token))
                 return Ok(new { IsSuccess = true, Message = "Already logged out." });
 
-            var result = _authService.Logout(token);
+            var result = _authService.LogoutAction(token);
             Response.Cookies.Delete("session_token");
 
             return Ok(result);
@@ -56,11 +57,15 @@ namespace HomeEstate.Api.Controller
             if (string.IsNullOrEmpty(token))
                 return Unauthorized(new { IsSuccess = false, Message = "No active session." });
 
-            var session = _authService.GetSession(token);
+            var session = _authService.GetSessionAction(token);
             if (session == null)
                 return Unauthorized(new { IsSuccess = false, Message = "Session expired." });
 
             return Ok(session);
         }
+
+        [HttpGet("users")]
+        public IActionResult GetAllUsers() => 
+            Ok(_authService.GetAllUsersAction());
     }
 }

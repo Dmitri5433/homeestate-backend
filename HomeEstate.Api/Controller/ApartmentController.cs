@@ -10,7 +10,6 @@ namespace HomeEstate.Api.Controller
     {
         private readonly IApartment _apartmentService;
 
-        // «ависимость передаетс€ через конструктор (DI)
         public ApartmentController(IApartment apartmentService)
         {
             _apartmentService = apartmentService;
@@ -19,35 +18,34 @@ namespace HomeEstate.Api.Controller
         [HttpGet("getAll")]
         public IActionResult GetAll()
         {
-            return Ok(_apartmentService.GetAll());
+            return Ok(_apartmentService.GetAllApartmentsAction());
         }
 
-        [HttpGet("{id}")] 
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var apartment = _apartmentService.GetById(id);
+            var apartment = _apartmentService.GetApartmentByIdAction(id);
             if (apartment == null)
                 return NotFound(new { Message = "Apartment not found." });
-
             return Ok(apartment);
         }
 
         [HttpPost]
         public IActionResult Create([FromBody] ApartmentDto apartment)
         {
-            return Ok(_apartmentService.Create(apartment));
+            return Ok(_apartmentService.ResponceApartmentCreateAction(apartment));
         }
 
         [HttpPut]
         public IActionResult Update([FromBody] ApartmentDto apartment)
         {
-            return Ok(_apartmentService.Update(apartment));
+            return Ok(_apartmentService.ResponceApartmentUpdateAction(apartment));
         }
 
-        [HttpDelete("{id}")] 
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(_apartmentService.Delete(id));
+            return Ok(_apartmentService.ResponceApartmentDeleteAction(id));
         }
     }
 }
