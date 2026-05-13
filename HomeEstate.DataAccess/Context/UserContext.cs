@@ -1,15 +1,19 @@
-﻿using HomeEstate.Domains.Entities.User;
+using HomeEstate.Domains.Entities.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace HomeEstate.DataAccess.Context
 {
     public class UserContext : DbContext
     {
+        public UserContext() { }
+        public UserContext(DbContextOptions<UserContext> options) : base(options) { }
+
         public DbSet<UserData> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(DbSession.ConnectionStrings);
+            if (!optionsBuilder.IsConfigured)
+                optionsBuilder.UseSqlServer(DbSession.ConnectionStrings);
         }
     }
 }

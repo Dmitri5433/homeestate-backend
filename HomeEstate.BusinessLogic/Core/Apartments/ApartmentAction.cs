@@ -1,8 +1,9 @@
-﻿using HomeEstate.DataAccess.Context;
+using HomeEstate.DataAccess.Context;
 using HomeEstate.Domains.Entities.Apartment;
 using HomeEstate.Domains.Enums;
 using HomeEstate.Domains.Models.Apartment;
 using HomeEstate.Domains.Models.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace HomeEstate.BusinessLogic.Core.Apartments
 {
@@ -19,7 +20,8 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
                 Rooms    = a.Rooms,
                 Area     = a.Area,
                 Price    = a.Price,
-                ImageUrl = a.ImageUrl
+                ImageUrl = a.ImageUrl,
+                Images   = a.Images?.Select(img => img.Url).ToList() ?? new List<string>()
             };
         }
 
@@ -49,7 +51,7 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
         {
             using (var db = new ApartmentContext())
             {
-                var a = db.Apartments.FirstOrDefault(x => x.Id == id);
+                var a = db.Apartments.Include(x => x.Images).FirstOrDefault(x => x.Id == id);
                 if (a == null) return null;
                 return MapToDto(a);
             }
@@ -77,6 +79,11 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
                 newApartment.CreatedAt = DateTime.UtcNow;
                 newApartment.UpdatedAt = DateTime.UtcNow;
 
+                if (apartment.Images != null && apartment.Images.Any())
+                {
+                    newApartment.Images = apartment.Images.Select(url => new ApartmentImageData { Url = url }).ToList();
+                }
+
                 db.Apartments.Add(newApartment);
                 db.SaveChanges();
             }
@@ -87,7 +94,7 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
         {
             using (var db = new ApartmentContext())
             {
-                var existing = db.Apartments.FirstOrDefault(x => x.Id == apartment.Id);
+                var existing = db.Apartments.Include(x => x.Images).FirstOrDefault(x => x.Id == apartment.Id);
                 if (existing == null)
                     return new ResponceMsg { IsSuccess = false, Message = "Apartment not found." };
 
@@ -98,6 +105,15 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
                 existing.Price    = apartment.Price;
                 existing.ImageUrl = apartment.ImageUrl;
                 existing.UpdatedAt = DateTime.UtcNow;
+
+                if (apartment.Images != null)
+                {
+                    if (existing.Images != null && existing.Images.Any())
+                    {
+                        db.RemoveRange(existing.Images);
+                    }
+                    existing.Images = apartment.Images.Select(url => new ApartmentImageData { Url = url }).ToList();
+                }
 
                 db.SaveChanges();
             }
