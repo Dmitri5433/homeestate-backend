@@ -1324,24 +1324,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xmenx\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
       "projectName": "HomeEstate.BusinessLogic",
-      "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
-      "packagesPath": "C:\\Users\\xmenx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.BusinessLogic\\obj\\",
+      "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\xmenx\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1355,11 +1350,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj"
+            "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj"
             },
-            "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
-              "projectPath": "C:\\Users\\xmenx\\OneDrive\\Desktop\\HomeEstate-backend\\HomeEstate.Api\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
+            "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+              "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
             }
           }
         }
@@ -1374,7 +1369,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1399,15 +1394,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.23, 8.0.23]"
+            "version": "[8.0.26, 8.0.26]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.23, 8.0.23]"
+            "version": "[8.0.26, 8.0.26]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.23, 8.0.23]"
+            "version": "[8.0.26, 8.0.26]"
           }
         ],
         "frameworkReferences": {
@@ -1415,7 +1410,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -1424,7 +1419,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"AutoMapper\" 12.0.1 есть известная уязвимость https://github.com/advisories/GHSA-rvv3-g6hj-g44x (уровень серьезности: высокий)",
+      "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net8.0"

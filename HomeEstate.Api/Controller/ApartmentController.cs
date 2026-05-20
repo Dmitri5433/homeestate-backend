@@ -16,7 +16,6 @@ namespace HomeEstate.Api.Controller
             _apartment = bl.GetApartmentActions();
         }
 
-        // GET api/apartment/getAll
         [HttpGet("getAll")]
         public IActionResult GetAll()
         {
@@ -24,7 +23,6 @@ namespace HomeEstate.Api.Controller
             return Ok(apartments);
         }
 
-        // GET api/apartment/id?id=1
         [HttpGet("id")]
         public IActionResult GetById(int id)
         {
@@ -35,7 +33,6 @@ namespace HomeEstate.Api.Controller
             return Ok(apartment);
         }
 
-        // POST api/apartment
         [HttpPost]
         public IActionResult Create([FromBody] ApartmentDto apartment)
         {
@@ -43,7 +40,6 @@ namespace HomeEstate.Api.Controller
             return Ok(result);
         }
 
-        // PUT api/apartment
         [HttpPut]
         public IActionResult Update([FromBody] ApartmentDto apartment)
         {
@@ -51,7 +47,6 @@ namespace HomeEstate.Api.Controller
             return Ok(result);
         }
 
-        // DELETE api/apartment/id?id=1
         [HttpDelete("id")]
         public IActionResult Delete(int id)
         {
