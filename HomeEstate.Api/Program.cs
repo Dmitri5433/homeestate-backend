@@ -1,9 +1,18 @@
-﻿using HomeEstate.DataAccess;
+﻿using HomeEstate.Domains;
 using HomeEstate.DataAccess.Context;
+using HomeEstate.BusinessLogic;  
+using HomeEstate.BusinessLogic.Interface;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-DbSession.ConnectionStrings = builder.Configuration.GetConnectionString("DefaultConnection")!;
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<DbSession>(options => 
+    options.UseSqlite(connString));
+
+builder.Services.AddIdentityApiEndpoints<User>()
+    .AddEntityFrameworkStores<DbSession>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -13,24 +22,36 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://localhost:5174", "https://homeestate-peach.vercel.app")
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+        policy.WithOrigins(
+            "http://localhost:5173",
+            "http://localhost:5174",
+            "https://homeestate-peach.vercel.app"
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials();
     });
 });
 
+builder.Services.AddScoped<BusinessLogic>();
+builder.Services.AddScoped<IApartment>(sp => sp.GetRequiredService<BusinessLogic>().GetApartmentActions());
+builder.Services.AddScoped<IAuthActions>(sp => sp.GetRequiredService<BusinessLogic>().GetAuthActions());
+builder.Services.AddScoped<ICityActions>(sp => sp.GetRequiredService<BusinessLogic>().GetCityActions());
+
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+if (app.Environment.IsDevelopment())
 {
-    using (var db = new ApartmentContext()) { db.Database.EnsureCreated(); }
-    using (var db = new UserContext()) { db.Database.EnsureCreated(); }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
-
+app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
-app.UseAuthorization();
+app.UseAuthentication(); 
+app.UseAuthorization(); 
+app.MapIdentityApi<User>();
 app.MapControllers();
 app.Run();
