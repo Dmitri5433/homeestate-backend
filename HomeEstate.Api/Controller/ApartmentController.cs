@@ -8,50 +8,44 @@ namespace HomeEstate.Api.Controller
     [ApiController]
     public class ApartmentController : ControllerBase
     {
-        private readonly IApartment _apartment;
+        private readonly IApartment _apartmentService;
 
-        public ApartmentController()
+        public ApartmentController(IApartment apartmentService)
         {
-            var bl = new BusinessLogic.BusinessLogic();
-            _apartment = bl.GetApartmentActions();
+            _apartmentService = apartmentService;
         }
 
         [HttpGet("getAll")]
         public IActionResult GetAll()
         {
-            var apartments = _apartment.GetAllApartmentsAction();
-            return Ok(apartments);
+            return Ok(_apartmentService.GetAllApartmentsAction());
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var apartment = _apartment.GetApartmentByIdAction(id);
+            var apartment = _apartmentService.GetApartmentByIdAction(id);
             if (apartment == null)
                 return NotFound(new { Message = "Apartment not found." });
-
             return Ok(apartment);
         }
 
         [HttpPost]
         public IActionResult Create([FromBody] ApartmentDto apartment)
         {
-            var result = _apartment.ResponceApartmentCreateAction(apartment);
-            return Ok(result);
+            return Ok(_apartmentService.ResponceApartmentCreateAction(apartment));
         }
 
         [HttpPut]
         public IActionResult Update([FromBody] ApartmentDto apartment)
         {
-            var result = _apartment.ResponceApartmentUpdateAction(apartment);
-            return Ok(result);
+            return Ok(_apartmentService.ResponceApartmentUpdateAction(apartment));
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var result = _apartment.ResponceApartmentDeleteAction(id);
-            return Ok(result);
+            return Ok(_apartmentService.ResponceApartmentDeleteAction(id));
         }
     }
 }
