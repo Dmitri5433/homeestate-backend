@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj": {}
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj": {
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
         "projectName": "HomeEstate.BusinessLogic",
-        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
+        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\HomeEstate.BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\obj\\",
+        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj"
+              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj"
               },
-              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
-                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
+              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
               }
             }
           }
@@ -52,12 +52,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[12.0.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -92,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
         "projectName": "HomeEstate.DataAccess",
-        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
+        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\HomeEstate.DataAccess.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -116,8 +110,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
-                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
+              "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+                "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj"
               }
             }
           }
@@ -138,7 +132,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.0, )"
             },
@@ -183,14 +181,14 @@
         }
       }
     },
-    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
+    "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj",
+        "projectUniqueName": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj",
         "projectName": "HomeEstate.Domains",
-        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj",
+        "projectPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\HomeEstate.Domains.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\obj\\",
+        "outputPath": "C:\\Users\\user\\homeestate\\homeestate\\homeestate\\homeestate-backend\\HomeEstate.Domains\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -224,6 +222,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

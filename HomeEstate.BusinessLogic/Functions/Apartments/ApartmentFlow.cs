@@ -1,5 +1,6 @@
 using HomeEstate.BusinessLogic.Core.Apartments;
 using HomeEstate.BusinessLogic.Interface;
+using HomeEstate.DataAccess.Context;
 using HomeEstate.Domains.Models.Apartment;
 using HomeEstate.Domains.Models.Base;
 
@@ -7,6 +8,10 @@ namespace HomeEstate.BusinessLogic.Functions.Apartments
 {
     public class ApartmentFlow : ApartmentAction, IApartment
     {
+        public ApartmentFlow(DbSession db) : base(db)
+        {
+        }
+
         public List<ApartmentDto> GetAllApartmentsAction()
         {
             return ExecuteGetAllApartmentsAction();

@@ -9,5 +9,7 @@ namespace HomeEstate.BusinessLogic.Interface
         UserSessionDto? LoginAction(UserLoginDto data);
         ResponceMsg LogoutAction(string token);
         UserSessionDto? GetSessionAction(string token);
+        List<UserListDto> GetAllUsersAction();
     }
 }
+

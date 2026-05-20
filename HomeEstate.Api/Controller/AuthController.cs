@@ -8,17 +8,24 @@ namespace HomeEstate.Api.Controller
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthActions _auth;
-        public AuthController() { _auth = new BusinessLogic.BusinessLogic().GetAuthActions(); }
+        private readonly IAuthActions _authService;
+
+        public AuthController(IAuthActions authService)
+        {
+            _authService = authService;
+        }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] UserRegisterDto data) => Ok(_auth.RegisterAction(data));
+        public IActionResult Register([FromBody] UserRegisterDto data) => 
+            Ok(_authService.RegisterAction(data));
 
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLoginDto data)
         {
-            var session = _auth.LoginAction(data);
-            if (session == null) return Unauthorized(new { IsSuccess = false, Message = "Invalid email or password." });
+            var session = _authService.LoginAction(data);
+            if (session == null)
+                return Unauthorized(new { IsSuccess = false, Message = "Invalid email or password." });
+
             Response.Cookies.Append("session_token", session.SessionToken, new CookieOptions
             {
                 HttpOnly = true,
@@ -26,6 +33,7 @@ namespace HomeEstate.Api.Controller
                 Secure = true,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
             });
+
             return Ok(session);
         }
 
@@ -33,9 +41,12 @@ namespace HomeEstate.Api.Controller
         public IActionResult Logout()
         {
             var token = Request.Cookies["session_token"];
-            if (string.IsNullOrEmpty(token)) return Ok(new { IsSuccess = true, Message = "Already logged out." });
-            var result = _auth.LogoutAction(token);
+            if (string.IsNullOrEmpty(token))
+                return Ok(new { IsSuccess = true, Message = "Already logged out." });
+
+            var result = _authService.LogoutAction(token);
             Response.Cookies.Delete("session_token");
+
             return Ok(result);
         }
 
@@ -43,10 +54,18 @@ namespace HomeEstate.Api.Controller
         public IActionResult GetSession()
         {
             var token = Request.Cookies["session_token"];
-            if (string.IsNullOrEmpty(token)) return Unauthorized(new { IsSuccess = false, Message = "No active session." });
-            var session = _auth.GetSessionAction(token);
-            if (session == null) return Unauthorized(new { IsSuccess = false, Message = "Session expired." });
+            if (string.IsNullOrEmpty(token))
+                return Unauthorized(new { IsSuccess = false, Message = "No active session." });
+
+            var session = _authService.GetSessionAction(token);
+            if (session == null)
+                return Unauthorized(new { IsSuccess = false, Message = "Session expired." });
+
             return Ok(session);
         }
+
+        [HttpGet("users")]
+        public IActionResult GetAllUsers() => 
+            Ok(_authService.GetAllUsersAction());
     }
 }
