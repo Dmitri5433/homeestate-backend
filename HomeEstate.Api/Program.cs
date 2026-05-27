@@ -1,14 +1,14 @@
-﻿using HomeEstate.Domains;
+using HomeEstate.Domains;
 using HomeEstate.DataAccess.Context;
-using HomeEstate.BusinessLogic;  
 using HomeEstate.BusinessLogic.Interface;
+using HomeEstate.BusinessLogic.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<DbSession>(options => 
+builder.Services.AddDbContext<DbSession>(options =>
     options.UseSqlite(connString));
 
 builder.Services.AddIdentityApiEndpoints<User>()
@@ -33,10 +33,9 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddScoped<BusinessLogic>();
-builder.Services.AddScoped<IApartment>(sp => sp.GetRequiredService<BusinessLogic>().GetApartmentActions());
-builder.Services.AddScoped<IAuthActions>(sp => sp.GetRequiredService<BusinessLogic>().GetAuthActions());
-builder.Services.AddScoped<ICityActions>(sp => sp.GetRequiredService<BusinessLogic>().GetCityActions());
+builder.Services.AddScoped<IApartmentService, ApartmentService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICityService, CityService>();
 
 builder.Services.AddAuthorization();
 
@@ -50,8 +49,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
-app.UseAuthentication(); 
-app.UseAuthorization(); 
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapIdentityApi<User>();
 app.MapControllers();
 app.Run();

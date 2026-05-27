@@ -1,4 +1,4 @@
-﻿using HomeEstate.BusinessLogic.Interface;
+using HomeEstate.BusinessLogic.Interface;
 using HomeEstate.Domains.Models.City;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,20 +8,20 @@ namespace HomeEstate.Api.Controller
     [ApiController]
     public class CityController : ControllerBase
     {
-        private readonly ICityActions _cityService;
+        private readonly ICityService _cityService;
 
-        public CityController(ICityActions cityService)
+        public CityController(ICityService cityService)
         {
             _cityService = cityService;
         }
 
         [HttpGet("getAll")]
-        public IActionResult GetAll() => Ok(_cityService.GetAllCitiesAction());
+        public IActionResult GetAll() => Ok(_cityService.GetAll());
 
         [HttpPost]
-        public IActionResult Create([FromBody] CityDto city) => Ok(_cityService.CreateCityAction(city));
+        public IActionResult Create([FromBody] CityDto city) => Ok(_cityService.Create(city));
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id) => Ok(_cityService.DeleteCityAction(id));
+        public IActionResult Delete(int id) => Ok(_cityService.Delete(id));
     }
 }

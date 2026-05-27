@@ -1,4 +1,4 @@
-﻿using HomeEstate.BusinessLogic.Interface;
+using HomeEstate.BusinessLogic.Interface;
 using HomeEstate.Domains.Models.User;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,21 +8,21 @@ namespace HomeEstate.Api.Controller
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthActions _authService;
+        private readonly IAuthService _authService;
 
-        public AuthController(IAuthActions authService)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] UserRegisterDto data) => 
-            Ok(_authService.RegisterAction(data));
+        public IActionResult Register([FromBody] UserRegisterDto data) =>
+            Ok(_authService.Register(data));
 
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLoginDto data)
         {
-            var session = _authService.LoginAction(data);
+            var session = _authService.Login(data);
             if (session == null)
                 return Unauthorized(new { IsSuccess = false, Message = "Invalid email or password." });
 
@@ -44,7 +44,7 @@ namespace HomeEstate.Api.Controller
             if (string.IsNullOrEmpty(token))
                 return Ok(new { IsSuccess = true, Message = "Already logged out." });
 
-            var result = _authService.LogoutAction(token);
+            var result = _authService.Logout(token);
             Response.Cookies.Delete("session_token");
 
             return Ok(result);
@@ -57,7 +57,7 @@ namespace HomeEstate.Api.Controller
             if (string.IsNullOrEmpty(token))
                 return Unauthorized(new { IsSuccess = false, Message = "No active session." });
 
-            var session = _authService.GetSessionAction(token);
+            var session = _authService.GetSession(token);
             if (session == null)
                 return Unauthorized(new { IsSuccess = false, Message = "Session expired." });
 
@@ -65,7 +65,7 @@ namespace HomeEstate.Api.Controller
         }
 
         [HttpGet("users")]
-        public IActionResult GetAllUsers() => 
-            Ok(_authService.GetAllUsersAction());
+        public IActionResult GetAllUsers() =>
+            Ok(_authService.GetAllUsers());
     }
 }
