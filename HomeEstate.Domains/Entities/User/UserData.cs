@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HomeEstate.Domains.Entities.User
@@ -20,7 +20,7 @@ namespace HomeEstate.Domains.Entities.User
         [Required]
         public string Password { get; set; }
 
-        public string? SessionToken { get; set; }
+        public string SessionToken { get; set; }
 
         public DateTime CreatedAt { get; set; }
     }

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HomeEstate.Domains.Entities.Apartment
@@ -10,11 +10,11 @@ namespace HomeEstate.Domains.Entities.Apartment
         public int Id { get; set; }
 
         [StringLength(500)]
-        public string? FullDescription { get; set; }
+        public string FullDescription { get; set; }
 
-        public string? Address { get; set; }
+        public string Metro { get; set; }
 
-        public int YearBuilt { get; set; }
+        public string Description { get; set; }
 
         public bool HasParking { get; set; }
 

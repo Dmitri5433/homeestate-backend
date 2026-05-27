@@ -1,24 +1,25 @@
-﻿using HomeEstate.DataAccess.Context;
+using HomeEstate.BusinessLogic.Interface;
+using HomeEstate.DataAccess.Context;
 using HomeEstate.Domains.Entities.User;
 using HomeEstate.Domains.Models.Base;
 using HomeEstate.Domains.Models.User;
 
-namespace HomeEstate.BusinessLogic.Core.Auth
+namespace HomeEstate.BusinessLogic.Services
 {
-    public class AuthActions
+    public class AuthService : IAuthService
     {
-        protected readonly DbSession _db;
+        private readonly DbSession _db;
 
-        public AuthActions(DbSession db)
+        public AuthService(DbSession db)
         {
             _db = db;
         }
 
-        protected ResponceMsg ExecuteRegisterAction(UserRegisterDto data)
+        public ResponseMessage Register(UserRegisterDto data)
         {
             var existing = _db.UserData.FirstOrDefault(u => u.Email == data.Email);
             if (existing != null)
-                return new ResponceMsg { IsSuccess = false, Message = "Email already registered." };
+                return new ResponseMessage { IsSuccess = false, Message = "Email already registered." };
 
             var user = new UserData
             {
@@ -29,10 +30,10 @@ namespace HomeEstate.BusinessLogic.Core.Auth
             };
             _db.UserData.Add(user);
             _db.SaveChanges();
-            return new ResponceMsg { IsSuccess = true, Message = "Registration successful." };
+            return new ResponseMessage { IsSuccess = true, Message = "Registration successful." };
         }
 
-        protected UserSessionDto? ExecuteLoginAction(UserLoginDto data)
+        public UserSessionDto Login(UserLoginDto data)
         {
             var user = _db.UserData.FirstOrDefault(u => u.Email == data.Email && u.Password == HashPassword(data.Password));
             if (user == null) return null;
@@ -41,23 +42,23 @@ namespace HomeEstate.BusinessLogic.Core.Auth
             return new UserSessionDto { Id = user.Id, UserName = user.UserName, Email = user.Email, SessionToken = user.SessionToken };
         }
 
-        protected ResponceMsg ExecuteLogoutAction(string token)
+        public ResponseMessage Logout(string token)
         {
             var user = _db.UserData.FirstOrDefault(u => u.SessionToken == token);
-            if (user == null) return new ResponceMsg { IsSuccess = false, Message = "Session not found." };
+            if (user == null) return new ResponseMessage { IsSuccess = false, Message = "Session not found." };
             user.SessionToken = null;
             _db.SaveChanges();
-            return new ResponceMsg { IsSuccess = true, Message = "Logged out successfully." };
+            return new ResponseMessage { IsSuccess = true, Message = "Logged out successfully." };
         }
 
-        protected UserSessionDto? ExecuteGetSessionAction(string token)
+        public UserSessionDto GetSession(string token)
         {
             var user = _db.UserData.FirstOrDefault(u => u.SessionToken == token);
             if (user == null) return null;
             return new UserSessionDto { Id = user.Id, UserName = user.UserName, Email = user.Email, SessionToken = user.SessionToken };
         }
 
-        protected List<UserListDto> ExecuteGetAllUsersAction()
+        public List<UserListDto> GetAllUsers()
         {
             return _db.UserData.Select(u => new UserListDto
             {

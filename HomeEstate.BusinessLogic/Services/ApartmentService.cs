@@ -1,3 +1,4 @@
+using HomeEstate.BusinessLogic.Interface;
 using HomeEstate.DataAccess.Context;
 using HomeEstate.Domains.Entities.Apartment;
 using HomeEstate.Domains.Enums;
@@ -5,13 +6,13 @@ using HomeEstate.Domains.Models.Apartment;
 using HomeEstate.Domains.Models.Base;
 using Microsoft.EntityFrameworkCore;
 
-namespace HomeEstate.BusinessLogic.Core.Apartments
+namespace HomeEstate.BusinessLogic.Services
 {
-    public class ApartmentAction
+    public class ApartmentService : IApartmentService
     {
-        protected readonly DbSession _db;
+        private readonly DbSession _db;
 
-        public ApartmentAction(DbSession db)
+        public ApartmentService(DbSession db)
         {
             _db = db;
         }
@@ -20,15 +21,15 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
         {
             return new ApartmentDto
             {
-                Id       = a.Id,
-                Name     = a.Name,
-                City     = a.City?.Name ?? "",
+                Id = a.Id,
+                Name = a.Name,
+                City = a.City.Name ?? "",
                 Category = a.Category,
-                Rooms    = a.Rooms,
-                Area     = a.Area,
-                Price    = a.Price,
+                Rooms = a.Rooms,
+                Area = a.Area,
+                Price = a.Price,
                 ImageUrl = a.ImageUrl,
-                Images   = a.Images?.Select(img => img.Url).ToList() ?? new List<string>()
+                Images = a.Images.Select(img => img.Url).ToList() ?? new List<string>()
             };
         }
 
@@ -36,33 +37,33 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
         {
             return new ApartmentData
             {
-                Id       = dto.Id,
-                Name     = dto.Name,
+                Id = dto.Id,
+                Name = dto.Name,
                 Category = dto.Category,
-                Rooms    = dto.Rooms,
-                Area     = dto.Area,
-                Price    = dto.Price,
+                Rooms = dto.Rooms,
+                Area = dto.Area,
+                Price = dto.Price,
                 ImageUrl = dto.ImageUrl
             };
         }
 
-        protected List<ApartmentDto> ExecuteGetAllApartmentsAction()
+        public List<ApartmentDto> GetAll()
         {
             return _db.Apartments.ToList().Select(MapToDto).ToList();
         }
 
-        protected ApartmentDto? GetApartmentDataByIdAction(int id)
+        public ApartmentDto GetById(int id)
         {
             var a = _db.Apartments.FirstOrDefault(x => x.Id == id);
             if (a == null) return null;
             return MapToDto(a);
         }
 
-        protected ResponceMsg ExecuteApartmentCreateAction(ApartmentDto apartment)
+        public ResponseMessage Create(ApartmentDto apartment)
         {
             var existing = _db.Apartments.FirstOrDefault(x => x.Name == apartment.Name);
             if (existing != null)
-                return new ResponceMsg { IsSuccess = false, Message = "An apartment with this name already exists." };
+                return new ResponseMessage { IsSuccess = false, Message = "An apartment with this name already exists." };
 
             var city = _db.Cities.FirstOrDefault(x => x.Name == apartment.City);
             if (city == null)
@@ -73,43 +74,43 @@ namespace HomeEstate.BusinessLogic.Core.Apartments
             }
 
             var newApartment = MapToEntity(apartment);
-            newApartment.CityId    = city.Id;
-            newApartment.Status    = ApartmentStatus.Available;
+            newApartment.CityId = city.Id;
+            newApartment.Status = ApartmentStatus.Available;
             newApartment.CreatedAt = DateTime.UtcNow;
             newApartment.UpdatedAt = DateTime.UtcNow;
 
             _db.Apartments.Add(newApartment);
             _db.SaveChanges();
-            return new ResponceMsg { IsSuccess = true, Message = "Apartment was successfully created." };
+            return new ResponseMessage { IsSuccess = true, Message = "Apartment was successfully created." };
         }
 
-        protected ResponceMsg ExecuteApartmentUpdateAction(ApartmentDto apartment)
+        public ResponseMessage Update(ApartmentDto apartment)
         {
             var existing = _db.Apartments.FirstOrDefault(x => x.Id == apartment.Id);
             if (existing == null)
-                return new ResponceMsg { IsSuccess = false, Message = "Apartment not found." };
+                return new ResponseMessage { IsSuccess = false, Message = "Apartment not found." };
 
-            existing.Name      = apartment.Name;
-            existing.Category  = apartment.Category;
-            existing.Rooms     = apartment.Rooms;
-            existing.Area      = apartment.Area;
-            existing.Price     = apartment.Price;
-            existing.ImageUrl  = apartment.ImageUrl;
+            existing.Name = apartment.Name;
+            existing.Category = apartment.Category;
+            existing.Rooms = apartment.Rooms;
+            existing.Area = apartment.Area;
+            existing.Price = apartment.Price;
+            existing.ImageUrl = apartment.ImageUrl;
             existing.UpdatedAt = DateTime.UtcNow;
 
             _db.SaveChanges();
-            return new ResponceMsg { IsSuccess = true, Message = "Apartment updated successfully." };
+            return new ResponseMessage { IsSuccess = true, Message = "Apartment updated successfully." };
         }
 
-        protected ResponceMsg ExecuteApartmentDeleteAction(int id)
+        public ResponseMessage Delete(int id)
         {
             var existing = _db.Apartments.FirstOrDefault(x => x.Id == id);
             if (existing == null)
-                return new ResponceMsg { IsSuccess = false, Message = "Apartment not found." };
+                return new ResponseMessage { IsSuccess = false, Message = "Apartment not found." };
 
             _db.Apartments.Remove(existing);
             _db.SaveChanges();
-            return new ResponceMsg { IsSuccess = true, Message = "Apartment deleted successfully." };
+            return new ResponseMessage { IsSuccess = true, Message = "Apartment deleted successfully." };
         }
     }
 }

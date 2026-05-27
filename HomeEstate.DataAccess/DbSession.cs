@@ -7,7 +7,7 @@ using HomeEstate.Domains.Entities.User;
 
 namespace HomeEstate.DataAccess.Context
 {
-    public class DbSession : IdentityDbContext<User> 
+    public class DbSession : IdentityDbContext<User>
     {
         public DbSession(DbContextOptions<DbSession> options) : base(options)
         {

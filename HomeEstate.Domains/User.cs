@@ -4,5 +4,5 @@ namespace HomeEstate.Domains;
 
 public class User : IdentityUser
 {
-    
+
 }

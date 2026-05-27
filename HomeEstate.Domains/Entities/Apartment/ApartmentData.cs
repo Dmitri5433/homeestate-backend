@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using HomeEstate.Domains.Entities.Refs;
@@ -25,7 +25,7 @@ namespace HomeEstate.Domains.Entities.Apartment
 
         public decimal Price { get; set; }
 
-        public string? ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
 
         public ApartmentStatus Status { get; set; }
 
@@ -34,7 +34,7 @@ namespace HomeEstate.Domains.Entities.Apartment
         [ForeignKey("CityId")]
         public City.CityData City { get; set; }
 
-        public ApartmentDescriptionData? Description { get; set; }
+        public ApartmentDescriptionData Description { get; set; }
 
         [InverseProperty("Apartment")]
         public List<ApartmentImageData> Images { get; set; }
