@@ -16,12 +16,12 @@ namespace HomeEstate.Api.Controller
         }
 
         [HttpGet("getAll")]
-        public IActionResult GetAll() => Ok(_cityService.GetAll());
+        public IActionResult GetAll() => Ok(_cityService.GetAllCitiesAction());
 
         [HttpPost]
-        public IActionResult Create([FromBody] CityDto city) => Ok(_cityService.Create(city));
+        public IActionResult Create([FromBody] CityDto city) => Ok(_cityService.CreateCityAction(city));
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id) => Ok(_cityService.Delete(id));
+        public IActionResult Delete(int id) => Ok(_cityService.DeleteCityAction(id));
     }
 }
