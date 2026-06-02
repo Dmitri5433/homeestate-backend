@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<DbSession>(options =>
-    options.UseSqlite(connString));
+    options.UseSqlServer(connString));
 
 builder.Services.AddIdentityApiEndpoints<User>()
     .AddEntityFrameworkStores<DbSession>();

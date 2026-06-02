@@ -1,3 +1,4 @@
+using HomeEstate.Api.Filters;
 using HomeEstate.BusinessLogic.Interface;
 using HomeEstate.Domains.Models.Apartment;
 using Microsoft.AspNetCore.Mvc;
@@ -31,18 +32,21 @@ namespace HomeEstate.Api.Controller
         }
 
         [HttpPost]
+        [AdminMod]
         public IActionResult Create([FromBody] ApartmentDto apartment)
         {
             return Ok(_apartmentService.Create(apartment));
         }
 
         [HttpPut]
+        [AdminMod]
         public IActionResult Update([FromBody] ApartmentDto apartment)
         {
             return Ok(_apartmentService.Update(apartment));
         }
 
         [HttpDelete("{id}")]
+        [AdminMod]
         public IActionResult Delete(int id)
         {
             return Ok(_apartmentService.Delete(id));

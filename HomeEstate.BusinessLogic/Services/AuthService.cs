@@ -26,6 +26,7 @@ namespace HomeEstate.BusinessLogic.Services
                 UserName = data.UserName,
                 Email = data.Email,
                 Password = HashPassword(data.Password),
+                Role = string.IsNullOrEmpty(data.Role) ? "User" : data.Role,
                 CreatedAt = DateTime.UtcNow
             };
             _db.UserData.Add(user);
@@ -39,7 +40,7 @@ namespace HomeEstate.BusinessLogic.Services
             if (user == null) return null;
             user.SessionToken = GenerateToken();
             _db.SaveChanges();
-            return new UserSessionDto { Id = user.Id, UserName = user.UserName, Email = user.Email, SessionToken = user.SessionToken };
+            return new UserSessionDto { Id = user.Id, UserName = user.UserName, Email = user.Email, SessionToken = user.SessionToken, Role = user.Role };
         }
 
         public ResponseMessage Logout(string token)
@@ -55,7 +56,7 @@ namespace HomeEstate.BusinessLogic.Services
         {
             var user = _db.UserData.FirstOrDefault(u => u.SessionToken == token);
             if (user == null) return null;
-            return new UserSessionDto { Id = user.Id, UserName = user.UserName, Email = user.Email, SessionToken = user.SessionToken };
+            return new UserSessionDto { Id = user.Id, UserName = user.UserName, Email = user.Email, SessionToken = user.SessionToken, Role = user.Role };
         }
 
         public List<UserListDto> GetAllUsers()

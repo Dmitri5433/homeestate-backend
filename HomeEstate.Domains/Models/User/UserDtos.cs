@@ -1,4 +1,4 @@
-﻿namespace HomeEstate.Domains.Models.User
+namespace HomeEstate.Domains.Models.User
 {
     public class UserLoginDto
     {
@@ -11,6 +11,7 @@
         public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Role { get; set; } = "User";
     }
 
     public class UserSessionDto
@@ -19,5 +20,6 @@
         public string UserName { get; set; }
         public string Email { get; set; }
         public string SessionToken { get; set; }
+        public string Role { get; set; }
     }
 }

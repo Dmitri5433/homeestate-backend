@@ -22,6 +22,8 @@ namespace HomeEstate.Domains.Entities.User
 
         public string SessionToken { get; set; }
 
+        public string Role { get; set; } = "User";
+
         public DateTime CreatedAt { get; set; }
     }
 }

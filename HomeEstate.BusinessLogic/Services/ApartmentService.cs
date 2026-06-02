@@ -23,13 +23,13 @@ namespace HomeEstate.BusinessLogic.Services
             {
                 Id = a.Id,
                 Name = a.Name,
-                City = a.City.Name ?? "",
+                City = a.City?.Name ?? "",
                 Category = a.Category,
                 Rooms = a.Rooms,
                 Area = a.Area,
                 Price = a.Price,
                 ImageUrl = a.ImageUrl,
-                Images = a.Images.Select(img => img.Url).ToList() ?? new List<string>()
+                Images = a.Images?.Select(img => img.Url).ToList() ?? new List<string>()
             };
         }
 
@@ -49,12 +49,20 @@ namespace HomeEstate.BusinessLogic.Services
 
         public List<ApartmentDto> GetAll()
         {
-            return _db.Apartments.ToList().Select(MapToDto).ToList();
+            return _db.Apartments
+                .Include(a => a.City)
+                .Include(a => a.Images)
+                .ToList()
+                .Select(MapToDto)
+                .ToList();
         }
 
         public ApartmentDto GetById(int id)
         {
-            var a = _db.Apartments.FirstOrDefault(x => x.Id == id);
+            var a = _db.Apartments
+                .Include(x => x.City)
+                .Include(x => x.Images)
+                .FirstOrDefault(x => x.Id == id);
             if (a == null) return null;
             return MapToDto(a);
         }
