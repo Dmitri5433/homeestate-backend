@@ -16,6 +16,8 @@ namespace HomeEstate.DataAccess.Context
         public static string ConnectionStrings { get; set; } = string.Empty;
 
         public DbSet<ApartmentData> Apartments { get; set; }
+        public DbSet<ApartmentDescriptionData> ApartmentDescriptions { get; set; }
+        public DbSet<ReviewData> Reviews { get; set; }
         public DbSet<UserData> UserData { get; set; }
         public DbSet<CityData> Cities { get; set; }
 
@@ -39,6 +41,18 @@ namespace HomeEstate.DataAccess.Context
                 .HasOne(a => a.City)
                 .WithMany(c => c.Apartments)
                 .HasForeignKey(a => a.CityId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<ReviewData>()
+                .HasOne(r => r.Apartment)
+                .WithMany()
+                .HasForeignKey(r => r.ApartmentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ReviewData>()
+                .HasOne(r => r.User)
+                .WithMany()
+                .HasForeignKey(r => r.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

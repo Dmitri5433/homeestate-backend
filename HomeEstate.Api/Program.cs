@@ -36,6 +36,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<IApartmentService, ApartmentService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ICityService, CityService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 builder.Services.AddAuthorization();
 

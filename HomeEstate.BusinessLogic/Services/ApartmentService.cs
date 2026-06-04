@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using HomeEstate.BusinessLogic.Interface;
 using HomeEstate.DataAccess.Context;
 using HomeEstate.Domains.Entities.Apartment;
@@ -29,7 +32,29 @@ namespace HomeEstate.BusinessLogic.Services
                 Area = a.Area,
                 Price = a.Price,
                 ImageUrl = a.ImageUrl,
-                Images = a.Images?.Select(img => img.Url).ToList() ?? new List<string>()
+                Images = a.Images?.Select(img => img.Url).ToList() ?? new List<string>(),
+
+                // Расширенное описание
+                Description = a.Description?.Description ?? "",
+                District = a.Description?.District ?? "",
+                Floor = a.Description?.Floor ?? 0,
+                Entrance = a.Description?.Entrance ?? 0,
+                TotalFloors = a.Description?.TotalFloors ?? 0,
+                HasParking = a.Description?.HasParking ?? false,
+                HasElevator = a.Description?.HasElevator ?? false,
+
+                // Отзывы
+                Reviews = a.Reviews?
+                    .OrderByDescending(r => r.CreatedAt)
+                    .Select(r => new ReviewDto
+                    {
+                        Id = r.Id,
+                        Text = r.Text,
+                        Rating = r.Rating,
+                        UserName = r.User?.UserName ?? "",
+                        CreatedAt = r.CreatedAt,
+                        ApartmentId = r.ApartmentId
+                    }).ToList() ?? new List<ReviewDto>()
             };
         }
 
@@ -52,6 +77,7 @@ namespace HomeEstate.BusinessLogic.Services
             return _db.Apartments
                 .Include(a => a.City)
                 .Include(a => a.Images)
+                .Include(a => a.Description)
                 .ToList()
                 .Select(MapToDto)
                 .ToList();
@@ -62,6 +88,8 @@ namespace HomeEstate.BusinessLogic.Services
             var a = _db.Apartments
                 .Include(x => x.City)
                 .Include(x => x.Images)
+                .Include(x => x.Description)
+                .Include(x => x.Reviews).ThenInclude(r => r.User)
                 .FirstOrDefault(x => x.Id == id);
             if (a == null) return null;
             return MapToDto(a);
@@ -89,12 +117,30 @@ namespace HomeEstate.BusinessLogic.Services
 
             _db.Apartments.Add(newApartment);
             _db.SaveChanges();
+
+            // Сохраняем описание
+            var desc = new ApartmentDescriptionData
+            {
+                ApartmentId = newApartment.Id,
+                Description = apartment.Description ?? "",
+                District = apartment.District ?? "",
+                Floor = apartment.Floor,
+                Entrance = apartment.Entrance,
+                TotalFloors = apartment.TotalFloors,
+                HasParking = apartment.HasParking,
+                HasElevator = apartment.HasElevator
+            };
+            _db.ApartmentDescriptions.Add(desc);
+            _db.SaveChanges();
+
             return new ResponseMessage { IsSuccess = true, Message = "Apartment was successfully created." };
         }
 
         public ResponseMessage Update(ApartmentDto apartment)
         {
-            var existing = _db.Apartments.FirstOrDefault(x => x.Id == apartment.Id);
+            var existing = _db.Apartments
+                .Include(a => a.Description)
+                .FirstOrDefault(x => x.Id == apartment.Id);
             if (existing == null)
                 return new ResponseMessage { IsSuccess = false, Message = "Apartment not found." };
 
@@ -105,6 +151,20 @@ namespace HomeEstate.BusinessLogic.Services
             existing.Price = apartment.Price;
             existing.ImageUrl = apartment.ImageUrl;
             existing.UpdatedAt = DateTime.UtcNow;
+
+            // Обновляем описание
+            if (existing.Description == null)
+            {
+                existing.Description = new ApartmentDescriptionData { ApartmentId = existing.Id };
+                _db.ApartmentDescriptions.Add(existing.Description);
+            }
+            existing.Description.Description = apartment.Description ?? "";
+            existing.Description.District = apartment.District ?? "";
+            existing.Description.Floor = apartment.Floor;
+            existing.Description.Entrance = apartment.Entrance;
+            existing.Description.TotalFloors = apartment.TotalFloors;
+            existing.Description.HasParking = apartment.HasParking;
+            existing.Description.HasElevator = apartment.HasElevator;
 
             _db.SaveChanges();
             return new ResponseMessage { IsSuccess = true, Message = "Apartment updated successfully." };

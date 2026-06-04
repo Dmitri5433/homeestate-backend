@@ -38,5 +38,8 @@ namespace HomeEstate.Domains.Entities.Apartment
 
         [InverseProperty("Apartment")]
         public List<ApartmentImageData> Images { get; set; }
+
+        [InverseProperty("Apartment")]
+        public List<ReviewData> Reviews { get; set; }
     }
 }

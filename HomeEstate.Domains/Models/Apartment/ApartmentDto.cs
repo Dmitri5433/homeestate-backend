@@ -14,5 +14,17 @@ namespace HomeEstate.Domains.Models.Apartment
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public List<string> Images { get; set; } = new List<string>();
+
+        // Расширенное описание
+        public string Description { get; set; }
+        public string District { get; set; }
+        public int Floor { get; set; }
+        public int Entrance { get; set; }
+        public int TotalFloors { get; set; }
+        public bool HasParking { get; set; }
+        public bool HasElevator { get; set; }
+
+        // Отзывы
+        public List<ReviewDto> Reviews { get; set; } = new List<ReviewDto>();
     }
 }
