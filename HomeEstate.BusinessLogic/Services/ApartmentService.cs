@@ -172,9 +172,20 @@ namespace HomeEstate.BusinessLogic.Services
 
         public ResponseMessage Delete(int id)
         {
-            var existing = _db.Apartments.FirstOrDefault(x => x.Id == id);
+            var existing = _db.Apartments
+                .Include(a => a.Description)
+                .Include(a => a.Reviews)
+                .Include(a => a.Images)
+                .FirstOrDefault(x => x.Id == id);
+
             if (existing == null)
                 return new ResponseMessage { IsSuccess = false, Message = "Apartment not found." };
+
+            if (existing.Description != null)
+                _db.ApartmentDescriptions.Remove(existing.Description);
+
+            if (existing.Reviews != null && existing.Reviews.Any())
+                _db.Reviews.RemoveRange(existing.Reviews);
 
             _db.Apartments.Remove(existing);
             _db.SaveChanges();
